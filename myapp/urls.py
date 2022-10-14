@@ -8,4 +8,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('image', views.addImage, name="image"),
     path('contact',views.contact,name='contact'),
+    path('profile',views.profile,name='profile'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

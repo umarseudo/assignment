@@ -12,14 +12,14 @@
     </head>
     <body class="contain-center">
         <div class="container mt-4 mb-4 p-3 d-flex justify-content-center"> 
-            <div class="card p-4"> 
+            <div class="card p-4" style="background-color: rgb(241, 234, 234);"> 
                 <div class=" image d-flex flex-column justify-content-center align-items-center"> 
                     <button class="btn btn-secondary"> 
                         <img src="/static/img/wallpaper.PNG" height="100" width="100"  style="border-radius: 15px;"/>
                     </button> 
                     <span class="name mt-3">Umar bin Raduwan</span>
                     <div class=" d-flex mt-2"> 
-                        <button type="button" class="btn1 btn-dark"><a href="/myapp/contact" style="color:white;">Contact me</a></button>
+                        <button type="button" class="btn1 btn-dark"><a href="/contact" style="color:white;">Contact me</a></button>
                     </div> 
                     <div class=" px-2 rounded mt-4 date "> 
                         <span class="join">Joined July,2021
@@ -28,15 +28,27 @@
                 </div> 
             </div>
         </div>
+        
+        <div class="container mt-4 mb-4 p-1 d-flex justify-content-center"> 
+        {% if messages %}
+
+        {% for message in messages %}
+        <div class="alert alert-info">
+            {{ message}}
+        </div>
+
+        {% endfor %}
+        {% endif %}
+        </div>
         <div class="container mt-4 mb-4 p-1 d-flex justify-content-center"> 
             <div> 
                 <div class=" image d-flex flex-column justify-content-center align-items-center"> 
-                    <span class="name mt-1" style="color: white;">Projects</span>
+                    <span class="name mt-1" style="color: rgb(0, 0, 0);">MY PROJECTS</span>
                 </div>
             </div>
         </div>
         <div class="container d-flex">
-            <div class="row g-2">
+            <div class="row g-2" class="align-self-stretch">
                 {% for p in products %}
                 <div class="col-2 Hov">
                     <div class="p-3 border bg-light" style="border-radius: 15px;">
@@ -44,12 +56,12 @@
                         alt="Generic placeholder image" class="img-fluid"
                         style="border-radius: 10px;">
                     </div>
-                    <p class="row d-flex justify-content-center align-items-center" style="color: white;">{{ p.name }}</p>
+                    <p class="row d-flex justify-content-center align-items-center" style="color: rgb(0, 0, 0);">{{ p.name }}</p>
                 </div>
                 {% endfor %}
                 <div class="col-2 row d-flex justify-content-center align-items-center">
                     <div style="border-radius: 15px;">
-                        <a href="/myapp/image"><i class="bi bi-plus-square"></i></i></a>
+                        <a href="image"><i class="bi bi-plus-square"></i></i></a>
                     </div>
                 </div>
             </div>

@@ -13,6 +13,11 @@ def index(request):
     return render(request, 'profile.html', context)
     # return HttpResponse("Hello, world. You're at the polls index.")
 
+def profile(request):
+    products = item.objects.all()
+    context = {'products':products}
+    return render(request, 'profile.html', context)
+
 def addImage(request):
     if request.method == "POST":
         prod = item()
@@ -23,7 +28,7 @@ def addImage(request):
 
         prod.save()
         messages.success(request, "Successfully added new image.")
-        return redirect('/myapp/image')   
+        return redirect('/image')   
     return render(request,'image.html')      
 
 def contact(request):
@@ -34,12 +39,12 @@ def contact(request):
         prod.message = request.POST['messages']
 
         prod.save()
-        messages.success(request, "Success!")
+        messages.success(request, "Successfully send email")
         # token = str(uuid.uuid4())
         sender_email = "eftechdrillingsolution@gmail.com"
-        rec_email = "umar.raduwan@eftech.com.my"
+        rec_email = "umar.work93@gmail.com"
         password = "rbgkcfanknywqvqw"
-        message = prod.message
+        message = prod.message + ' ' + prod.name + ' ' + prod.email
 
         server = smtplib.SMTP('smtp.gmail.com',587)
         server.starttls()
@@ -47,5 +52,5 @@ def contact(request):
         print("login success") 
         server.sendmail(sender_email, rec_email, message)
         # return render(request, "login.html")
-        return redirect('/myapp/')
+        return redirect('/profile')
     return render(request,'contact.html')       

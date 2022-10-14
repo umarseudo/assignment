@@ -3,10 +3,6 @@
     padding: 0
 }
 
-body {
-    background-color: #000000;
-}
-
 .card {
     width: 350px;
     background-color: #efefef;
@@ -20,7 +16,7 @@ body {
 }
 
 .card:hover .image img {
-    transform: scale(2.5)
+    transform: scale(1)
 }
 
 .Hov img{
@@ -60,15 +56,6 @@ body {
     font-size: 12px;
     font-weight: 500;
     color: #444444
-}
-
-.contain-center{
-    background-color: #000000;
-    background-image: linear-gradient(to top right, rgb(231, 69, 231),rgb(112, 159, 202));
-}
-
-.project-background{
-    background-image: linear-gradient(to top right, rgb(0, 0, 0),rgb(180, 180, 180));
 }
 
 .btn1 {
